@@ -1,46 +1,83 @@
-CPU Scheduling Simulator
-Priority vs SRTF (Shortest Remaining Time First)
+# CPU Scheduling Simulator  
+## Priority vs SRTF (Shortest Remaining Time First)  
+### Operating Systems Course Project  
 
-Operating Systems Course Project
+---
 
-📌 Overview
+## Overview  
+A web-based simulator designed to compare Priority Scheduling and SRTF algorithms using the same set of processes.  
+The project focuses on visualization and performance analysis of CPU scheduling techniques.
 
-A web-based simulator that compares Priority Scheduling and SRTF algorithms using the same process set with real-time visualization and metrics comparison.
+---
 
-✨ Features
-Side-by-side comparison of Priority vs SRTF
-Interactive Gantt Charts for visualization
-Preemptive scheduling simulation
-Performance metrics calculation
-Pre-built test scenarios + random generator
-Input validation system
-Responsive design (desktop & tablet)
-⚙️ Algorithms Implemented
-🔵 Priority Scheduling (Preemptive)
-Lower value = higher priority
-Can preempt running process if a higher priority arrives
-Tie-breaker: Arrival Time → PID
-🟢 SRTF (Shortest Remaining Time First)
-Selects process with minimum remaining burst time
-Preemptive version of SJF
-Tie-breaker: Arrival Time → PID
-📊 Metrics Used
-CT (Completion Time) → When process finishes
-WT (Waiting Time) → Time spent in ready queue
-TAT (Turnaround Time) → Arrival → Completion
-RT (Response Time) → First CPU response
-🚀 How to Use
-Add processes (PID, Arrival Time, Burst Time, Priority)
-Or load a pre-built scenario
-Click Run Simulation
-View Gantt charts + results comparison
+## Features  
+- Side-by-side comparison of Priority and SRTF scheduling  
+- Interactive Gantt chart visualization  
+- Preemptive scheduling support  
+- Automatic calculation of performance metrics  
+- Pre-built test cases and random process generator  
+- Input validation system  
+- Responsive design for desktop and tablet  
 
-📌 Shortcut: Ctrl + Enter
+---
 
-📁 Project Structure
-index.html   → Main UI structure  
-style.css    → Styling & layout  
-script.js    → Scheduling logic  
-▶️ Run Project
+## Algorithms Implemented  
 
-Just open index.html in any browser.
+### Priority Scheduling (Preemptive)  
+- Lower priority value means higher execution priority  
+- Can interrupt currently running process if a higher priority process arrives  
+- Tie-breaking order: Arrival Time → PID  
+
+---
+
+### SRTF (Shortest Remaining Time First)  
+- Selects process with the smallest remaining burst time  
+- Preemptive version of Shortest Job First (SJF)  
+- Tie-breaking order: Arrival Time → PID  
+
+---
+
+## Performance Metrics  
+
+- Completion Time (CT): Time at which a process finishes execution  
+- Waiting Time (WT): Total time a process spends in the ready queue  
+- Turnaround Time (TAT): CT − Arrival Time  
+- Response Time (RT): Time until the process gets CPU for the first time  
+
+---
+
+## How to Use  
+
+1. Add processes with the following details:
+   - Process ID (PID)  
+   - Arrival Time  
+   - Burst Time  
+   - Priority  
+
+2. Alternatively, load a pre-defined scenario  
+3. Run the simulation  
+4. View results:
+   - Gantt charts for both algorithms  
+   - Comparison of performance metrics  
+
+---
+
+## Keyboard Shortcut  
+Ctrl + Enter → Run Simulation  
+
+---
+
+## Project Structure  
+
+
+index.html → Main interface (UI)
+style.css → Styling and layout
+script.js → Scheduling logic and algorithms
+
+
+---
+
+## Running the Project  
+
+Open `index.html` directly in any modern web browser.  
+No installation or dependencies required.
