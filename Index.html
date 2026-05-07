@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  Priority vs SRTF Scheduling </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- el wagha   -->
+        <header class="header">
+            <div class="header-decoration">
+                <span class="badge">OS Project</span>
+            </div>
+            <h1>Scheduling Algorithm Comparator</h1>
+            <div class="description-text">
+                Priority vs SRTF . One clear comparison. See who schedules better.
+            </div>
+        </header>
+
+        <!-- scenariohat  for fast tagarob -->
+        <div class="card">
+            <h2>Quick-Load Scenarios</h2>
+            <div class="scenario-bar" id="scenario-bar">
+                <button class="btn btn-scenario" data-scenario="A"><span class="sc-label">A</span> Basic Mixed</button>
+                <button class="btn btn-scenario" data-scenario="B"><span class="sc-label">B</span> Priority vs Burst</button>
+                <button class="btn btn-scenario" data-scenario="C"><span class="sc-label">C</span> Starvation Risk</button>
+                <button class="btn btn-scenario" data-scenario="D"><span class="sc-label">D</span> Validation Case</button>
+                <button class="btn btn-scenario" id="btn-random" data-scenario="random"><span class="sc-label">R</span> Random Workload</button>
+            </div>
+        </div>
+
+        <!-- input panel  -->
+        <section class="card" id="input-panel">
+            <h2>Process Input <span class="proc-count" id="proc-count-badge">0 processes</span></h2>
+            <div class="process-table-wrap">
+                <table id="process-table">
+                    <thead>
+                        <tr><th>Process ID</th><th>Arrival Time</th><th>Burst Time</th><th>Priority</th><th>Action</th></tr>
+                    </thead>
+                    <tbody id="process-tbody"></tbody>
+                </table>
+            </div>
+            <div class="validation-errors" id="validation-errors"><ul id="validation-list"></ul></div>
+            <div class="btn-row">
+                <button class="btn btn-add" id="btn-add-process">+ Add Process</button>
+                <button class="btn btn-run" id="btn-run-simulation">Run Simulation</button>
+                <button class="btn btn-clear" id="btn-clear-all">Clear All</button>
+            </div>
+        </section>
+
+        <!-- algorithm rule boxes -->
+        <div class="two-col rule-zone" id="rule-boxes" style="display:none;">
+            <div class="rule-card"><strong>Priority Scheduling</strong><br>Smaller number = higher priority · Preemptive · Tie: earlier arrival -> lower PID</div>
+            <div class="rule-card"><strong>SRTF Scheduling</strong><br>Shortest remaining time · Preemptive · Tie: earlier arrival -> lower PID</div>
+        </div>
+
+        <!-- el ganttat  -->
+        <div id="gantt-section" style="display:none;">
+            <div class="card">
+                <h2>Priority — Gantt Chart</h2>
+                <div class="gantt-label">Preemptive Priority (lower number = higher priority)</div>
+                <div class="gantt-outer"><div class="gantt-inner" id="gantt-priority"></div><div class="gantt-markers" id="gantt-priority-markers"></div></div>
+                <div id="priority-idle-notice" class="idle-notice" style="display:none;"></div>
+            </div>
+            <div class="card">
+                <h2>Priority — Results</h2>
+                <div class="results-table-wrap"><table class="results-table"><thead><tr><th>PID</th><th>AT</th><th>BT</th><th>Pri</th><th>CT</th><th>WT</th><th>TAT</th><th>RT</th></tr></thead><tbody id="results-priority-tbody"></tbody></table></div>
+                <div class="metrics-grid" id="metrics-priority"></div>
+            </div>
+            <div class="card">
+                <h2>SRTF — Gantt Chart</h2>
+                <div class="gantt-label">Shortest Remaining Time First (preemptive)</div>
+                <div class="gantt-outer"><div class="gantt-inner" id="gantt-srtf"></div><div class="gantt-markers" id="gantt-srtf-markers"></div></div>
+                <div id="srtf-idle-notice" class="idle-notice" style="display:none;"></div>
+            </div>
+            <div class="card">
+                <h2>SRTF — Results</h2>
+                <div class="results-table-wrap"><table class="results-table"><thead><tr><th>PID</th><th>AT</th><th>BT</th><th>Pri</th><th>CT</th><th>WT</th><th>TAT</th><th>RT</th></tr></thead><tbody id="results-srtf-tbody"></tbody></table></div>
+                <div class="metrics-grid" id="metrics-srtf"></div>
+            </div>
+        </div>
+
+        <!-- el comp & conc  -->
+        <section class="card" id="comparison-section" style="display:none;">
+            <h2>Algorithm Comparison</h2>
+            <div id="comparison-content"></div>
+            <hr class="section-divider">
+            <div class="conclusion-box"><h3>Final Conclusion</h3><p id="conclusion-text"></p></div>
+        </section>
+
+        <footer class="app-footer">
+            Operating Systems Course Project · Priority vs SRTF · CPU Scheduling Simulator  @FCAI-CAPITAL UNI <br>
+            TEAM NAME : YA RAGEL DA YO3TABAR <br>
+            call us at : 01028823075<br>
+            for donation : just give us the grades please :) 
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
